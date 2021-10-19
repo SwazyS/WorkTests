@@ -5,6 +5,7 @@ do {
     let doc: Document = try SwiftSoup.parse(html)
     let link: Element = try doc.select("a").first()!
     
+    let text: String = try doc.body()!.text(); // "An example link"
     let linkHref: String = try link.attr("href"); // "http://example.com/"
     let linkText: String = try link.text(); // "example""
     
